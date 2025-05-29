@@ -1,4 +1,4 @@
-imagePullSecret: gitlab-registry-secret
+#imagePullSecret: gitlab-registry-secret
 
 webcommerce:
   wordpress:
