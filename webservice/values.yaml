@@ -1,9 +1,9 @@
+imagePullSecret: gitlab-registry-secret
+
 webcommerce:
   wordpress:
     #image: salim2025/webcommerce:v1
-    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce
-    imagePullSecret: gitlab-registry-secret   
+    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce   
 mysqlcommerce:
   mysql:
     image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce
-    imagePullSecret: gitlab-registry-secret
