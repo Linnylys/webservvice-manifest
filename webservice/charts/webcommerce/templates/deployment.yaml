@@ -33,6 +33,6 @@ spec:
         persistentVolumeClaim:
           claimName: wordpress-pvc
       imagePullSecrets:
-        {{- if .Values.imagePullSecret }}
-        - name: {{ .Values.imagePullSecret }}
+        {{- if .Values.wordpress.imagePullSecret }}
+        - name: {{ .Values.wordpress.imagePullSecret }}
         {{- end }}
