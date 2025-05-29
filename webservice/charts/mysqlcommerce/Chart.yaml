@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mysqlcommerce
+description: MySQL server for WooCommerce
+version: 0.1.0

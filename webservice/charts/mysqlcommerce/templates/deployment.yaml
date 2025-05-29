@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqlcommerce
+  #namespace: projet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysqlcommerce
+  template:
+    metadata:
+      labels:
+        app: mysqlcommerce
+    spec:
+      containers:
+      - name: mysql
+        image: {{ .Values.mysql.image }}
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "1234"
+        - name: MYSQL_DATABASE
+          value: "wordpress"
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysql-volume
+      volumes:
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: mysql-pvc

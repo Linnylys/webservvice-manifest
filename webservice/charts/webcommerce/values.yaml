@@ -1,0 +1,6 @@
+wordpress:
+  #image: salim2025/webcommerce:v1
+  storage: 5Gi
+  dbHost: mysqlcommerce
+  dbUser: root
+  dbPassword: "1234"

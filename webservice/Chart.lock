@@ -1,0 +1,9 @@
+dependencies:
+- name: mysqlcommerce
+  repository: file://charts/mysqlcommerce
+  version: 0.1.0
+- name: webcommerce
+  repository: file://charts/webcommerce
+  version: 0.1.0
+digest: sha256:9d27e8d50e0e87278fd4e1efaf6e340a8e139ebfef84b6f2d76f9c79ae04b202
+generated: "2025-05-15T09:02:01.171497999Z"

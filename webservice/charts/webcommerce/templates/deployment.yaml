@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webcommerce
+  #namespace: projet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webcommerce
+  template:
+    metadata:
+      labels:
+        app: webcommerce
+    spec:
+      containers:
+      - name: wordpress
+        image: {{ .Values.wordpress.image }}
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: "{{ .Values.wordpress.dbHost }}"
+        - name: WORDPRESS_DB_USER
+          value: "{{ .Values.wordpress.dbUser }}"
+        - name: WORDPRESS_DB_PASSWORD
+          value: "{{ .Values.wordpress.dbPassword }}"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: wordpress-volume
+      volumes:
+      - name: wordpress-volume
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
