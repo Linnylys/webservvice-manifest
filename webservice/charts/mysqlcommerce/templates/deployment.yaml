@@ -31,6 +31,6 @@ spec:
         persistentVolumeClaim:
           claimName: mysql-pvc
       imagePullSecrets:
-        {{- if .Values.mysqlcommerce.mysql.imagePullSecret }}
-        - name: {{ .Values.mysqlcommerce.mysql.imagePullSecret }}
+        {{- if .Values.mysql.imagePullSecret }}
+        - name: {{ .Values.mysql.imagePullSecret }}
         {{- end }}
