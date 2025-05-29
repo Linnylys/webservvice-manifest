@@ -3,9 +3,9 @@
 webcommerce:
   wordpress:
     #image: salim2025/webcommerce:v1
-    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce   
+    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:1a1b0587   
     imagePullSecret: gitlab-registry-secret
 mysqlcommerce:
   mysql:
-    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce
+    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce:1a1b0587
     imagePullSecret: gitlab-registry-secret
