@@ -4,3 +4,6 @@ wordpress:
   dbHost: mysqlcommerce
   dbUser: root
   dbPassword: "1234"
+  
+ingress:
+  enabled: true
