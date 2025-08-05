@@ -6,4 +6,4 @@ wordpress:
   dbPassword: "1234"
   
 ingress:
-  enabled: true
+  enabled: false
