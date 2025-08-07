@@ -2,7 +2,7 @@ wordpress:
   #image: salim2025/webcommerce:v1
   storage: 5Gi
   dbHost: mysqlcommerce
-  dbUser: root
+  dbUser: wordpress
   dbPassword: "1234"
   
 #ingress:
