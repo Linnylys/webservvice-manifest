@@ -1,6 +1,6 @@
 mysql:
   #image: salim2025/mysqlcommerce:v1
   database: wordpress
-  username: wordpress
+  username: root
   password: 1234
   storage: 5Gi
