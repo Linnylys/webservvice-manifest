@@ -1,6 +1,8 @@
 wordpress:
   #image: salim2025/webcommerce:v1
   storage: 5Gi
+  persistentVolumeClaimName: wordpress-pvc
+  storageClassName: gp3-immediate
   dbHost: mysqlcommerce
   dbUser: root
   dbPassword: "1234"
