@@ -31,7 +31,7 @@ spec:
       volumes:
       - name: wordpress-volume
         persistentVolumeClaim:
-          claimName: wordpress-pvc
+          claimName: {{ .Values.wordpress.persistentVolumeClaimName | default "wordpress-pvc" }}
       imagePullSecrets:
         {{- if .Values.wordpress.imagePullSecret }}
         - name: {{ .Values.wordpress.imagePullSecret }}
