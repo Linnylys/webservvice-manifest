@@ -1,11 +1,12 @@
 #imagePullSecret: gitlab-registry-secret
+tagWeb: "1a1b0587"
 
 webcommerce:
   wordpress:
     #image: salim2025/webcommerce:v1
-    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:1a1b0587   
+    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:{{ .Values.tagWeb }}   
     imagePullSecret: gitlab-registry-secret
 mysqlcommerce:
   mysql:
-    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce:1a1b0587
+    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce:{{ .Values.tagWeb }}
     imagePullSecret: gitlab-registry-secret
