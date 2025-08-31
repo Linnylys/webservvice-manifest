@@ -1,15 +1,15 @@
 #imagePullSecret: gitlab-registry-secret
-tagWeb:52d4d3a3f29339944fd5d19974322efa6ba43edc
+tagWeb:d00a2c5ddf1842456500bc21b0c8f0750d13deab
 
 
 webcommerce:
   wordpress:
     #image: salim2025/webcommerce:v1
-    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:{{ .Values.tagWeb:52d4d3a3f29339944fd5d19974322efa6ba43edc
+    image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:{{ .Values.tagWeb:d00a2c5ddf1842456500bc21b0c8f0750d13deab
     imagePullSecret: gitlab-registry-secret
     storage: 5Gi
 mysqlcommerce:
   mysql:
-    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce:{{ .Values.tagWeb:52d4d3a3f29339944fd5d19974322efa6ba43edc
+    image: registry.gitlab.com/lachuernet/devops_webservice/mysqlcommerce:{{ .Values.tagWeb:d00a2c5ddf1842456500bc21b0c8f0750d13deab
     imagePullSecret: gitlab-registry-secret
     storage: 5Gi
