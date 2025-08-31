@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: {{ .Values.wordpress.image }}
+        image: {{ .Values.image | default .Values.wordpress.image }}
         env:
         - name: WORDPRESS_DB_HOST
           value: "{{ .Values.wordpress.dbHost }}"
@@ -31,7 +31,7 @@ spec:
       volumes:
       - name: wordpress-volume
         persistentVolumeClaim:
-          claimName: wordpress-pvc
+          claimName: {{ .Release.Name }}-wordpress-pvc
       imagePullSecrets:
         {{- if .Values.wordpress.imagePullSecret }}
         - name: {{ .Values.wordpress.imagePullSecret }}

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: {{ .Values.mysql.image }}
+        image: {{ .Values.image | default .Values.mysql.image }}
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "1234"
@@ -29,7 +29,7 @@ spec:
       volumes:
       - name: mysql-volume
         persistentVolumeClaim:
-          claimName: mysql-pvc
+          claimName: {{ .Release.Name }}-mysql-pvc
       imagePullSecrets:
         {{- if .Values.mysql.imagePullSecret }}
         - name: {{ .Values.mysql.imagePullSecret }}

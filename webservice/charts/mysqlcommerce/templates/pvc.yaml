@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc
+  name: {{ .Release.Name }}-mysql-pvc
   #namespace: projet
 spec:
   accessModes:

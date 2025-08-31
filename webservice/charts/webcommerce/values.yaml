@@ -1,7 +1,9 @@
-wordpress:
-  #image: salim2025/webcommerce:v1
-  storage: 5Gi
-  dbHost: mysqlcommerce
-  dbUser: root
-  dbPassword: "1234"
-  imagePullSecret: gitlab-registry-secret
+webcommerce:
+  image: registry.gitlab.com/lachuernet/devops_webservice/webcommerce:{{ .Values.tagWeb }}
+  wordpress:
+    #image: salim2025/webcommerce:v1
+    storage: 5Gi
+    dbHost: mysqlcommerce
+    dbUser: root
+    dbPassword: "1234"
+    imagePullSecret: gitlab-registry-secret
