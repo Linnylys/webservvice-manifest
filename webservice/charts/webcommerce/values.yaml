@@ -4,3 +4,4 @@ wordpress:
   dbHost: mysqlcommerce
   dbUser: root
   dbPassword: "1234"
+  imagePullSecret: gitlab-registry-secret

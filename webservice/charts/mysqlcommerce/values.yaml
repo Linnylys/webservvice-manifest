@@ -4,3 +4,4 @@ mysql:
   username: root
   password: 1234
   storage: 5Gi
+  imagePullSecret: gitlab-registry-secret

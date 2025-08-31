@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webservice-project-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt-terraform_user
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+      - webservice.webservice.ip-ddns.com
+    secretName: webservice-project-tls-secret
+  rules:
+  - host: webservice.webservice.ip-ddns.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Release.Name }}-webcommerce
+            port:
+              number: 80
